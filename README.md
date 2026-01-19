@@ -2,23 +2,28 @@
 
 > Public good educational website for Wrapped Ether (WETC) on Ethereum Classic
 
-**Live at:** www.wrappedether.org
+**Live at:** [www.wrappedether.org](https://wrappedether.org)
 
 ---
 
-## Project Purpose
+## Versions
 
-**wrappedether.org** is a public good informational website explaining what Wrapped Ether (WETC) is and why it's required for DeFi on Ethereum Classic.
+| Version | Status | Tech Stack | Description |
+|---------|--------|------------|-------------|
+| **v0.1** | Live | Static HTML + CSS | Basic explainer with WETH.io GIFs |
+| **v0.2** | In Development | Next.js + React + Framer Motion | Custom animations, modern stack |
 
-### What is WETC?
+---
 
-Wrapped Ether (WETC) is a tokenized ERC-20 version of Ethereum Classic's native ETC asset. It enables ETC to be used in decentralized exchanges and DeFi protocols that require the ERC-20 standard.
+## What is WETC?
+
+**Wrapped Ether (WETC)** is the ERC-20 tokenized version of Ethereum Classic's native ETC. It enables ETC to participate in DeFi protocols that require the ERC-20 standard.
 
 **Why WETC exists:**
-- ETC predates the ERC-20 standard (launched 2015, before ERC-20)
+- ETC predates the ERC-20 standard (2015 vs 2017)
 - DeFi protocols like ETCswap require standardized token interfaces
-- WETC allows direct trading between ETC and other ERC-20 tokens
-- Non-custodial 1:1 wrapping/unwrapping via smart contract
+- WETC allows direct trading: `WETC/USC` on DEX mirrors `ETC/USDC` on CEX
+- Non-custodial, 1:1 backed, trustless smart contract
 
 ---
 
@@ -33,252 +38,223 @@ Wrapped Ether (WETC) is a tokenized ERC-20 version of Ethereum Classic's native 
 
 ---
 
-## Current Site (v1.0 - Minimal HTML)
+## Tech Stack (v0.2)
 
-### Tech Stack
-- **Static HTML** - GitHub Pages deployment
-- **Minimal Theme** - Jekyll theme for GitHub Pages
-- **CSS** - Custom styles
-- **Domain:** www.wrappedether.org (via CNAME)
+### Runtime & Tools
+| Tool | Version | Purpose |
+|------|---------|---------|
+| Node.js | 22.x LTS | Runtime (native fetch, ESM) |
+| pnpm | 9.x | Package manager |
 
-### Site Structure
+### Framework & Libraries
+| Library | Version | Purpose |
+|---------|---------|---------|
+| Next.js | 15.1.x | React framework, App Router |
+| React | 19.x | Component UI |
+| TypeScript | 5.7.x | Type safety |
+| Tailwind CSS | 4.0.x | Styling (Oxide engine) |
+| Framer Motion | 11.15.x | SVG animations |
+
+### Deployment
+| Service | Purpose |
+|---------|---------|
+| Vercel | Hosting (free tier) |
+| GitHub Actions | CI/CD |
+
+---
+
+## Project Structure (v0.2)
+
 ```
-/
-├── index.html          # Main page
-├── images/             # Logos (ETC, WETC)
-│   ├── ethereum-classic.png
-│   ├── wrapped-ether.png
-│   └── favicon.ico
-├── stylesheets/        # CSS files
-│   ├── styles.css
-│   └── pygment_trac.css
-├── javascripts/        # JS files
-├── CNAME              # Domain configuration
-└── _config.yml        # Jekyll configuration
+wrappedether/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx          # Root layout
+│   │   ├── page.tsx            # Main page
+│   │   └── globals.css         # Tailwind
+│   ├── components/
+│   │   ├── sections/           # Page sections
+│   │   ├── animations/         # Custom SVG animations
+│   │   ├── ui/                 # Reusable UI components
+│   │   └── Footer.tsx
+│   └── lib/
+│       ├── constants.ts        # Contract addresses
+│       └── animations.ts       # Framer Motion variants
+├── public/
+│   ├── images/
+│   └── fonts/
+├── research/
+│   └── weth-io/                # Reference materials
+├── docs/
+│   ├── V0.2-PLAN.md           # Development plan
+│   ├── ANIMATION-GUIDE.md     # Animation workflow
+│   └── WETH-IO-ANALYSIS.md    # Visual analysis
+└── package.json
 ```
 
-### Content Sections
-1. **What is WETC?** - Explanation of wrapped tokens
-2. **Why You Need WETC** - ERC-20 compliance for DeFi
-3. **Ready to Wrap?** - How to wrap/unwrap via ETCswap
-4. **The Canonical WETC Initiative** - Contract addresses
-
 ---
 
-## v2.0 Vision: Animated Explainer (Planned)
+## Quick Start
 
-Transform wrappedether.org into a modern, animated explainer page that makes WETC understandable in 60 seconds.
-
-### Goals
-- **Educational** - Clearly explain what WETC is and why it's necessary
-- **Fast** - <3s load time, mobile-first
-- **Beautiful** - Modern design matching ETC ecosystem aesthetic
-- **Actionable** - Direct CTAs to wrap/unwrap interfaces
-
-### Tech Stack (v2.0)
-- **Next.js 16** - App Router, SSG for speed
-- **React 19** - UI components
-- **TypeScript 5** - Type safety
-- **Tailwind CSS 4** - Styling
-- **Framer Motion 12** - Smooth animations
-- **Vercel** - Deployment (free tier)
-
-### Page Structure (v2.0)
-
-**Single-page explainer with 6 sections:**
-
-1. **Hero** - "What is WETC?" with animated ETC → WETC wrap visual
-2. **Why WETC Exists** - Timeline showing ETC (2015) predating ERC-20 (2017)
-3. **How It Works** - Visual diagram of 1:1 wrapping mechanism
-4. **Where to Wrap** - CTAs to ETCswap and Classic OS
-5. **Canonical Contracts** - Official addresses with verification links
-6. **For Developers** - Integration guide, contract ABIs
-
-### Design Inspiration
-- **aura.build** - Protocol-grade aesthetic with subtle motion
-- **ethereum.org** - Educational clarity
-- **uniswap.org** - Clean product focus
-
-### Animation Examples
-- ETC coin morphing into WETC token (Hero)
-- Timeline scroll animation (Why section)
-- Wrap/unwrap flow diagram with interactive states
-- Number counter for total WETC supply (live data)
-
----
-
-## Development Roadmap
-
-### Phase 1: Foundation (Current)
-- ✅ Static HTML site live at www.wrappedether.org
-- ✅ Domain configured via CNAME
-- ✅ Basic content and contract addresses
-- ⏳ Modernization planning
-
-### Phase 2: Next.js Migration (Planned)
-- [ ] Initialize Next.js 16 project
-- [ ] Set up TypeScript, Tailwind 4, Framer Motion
-- [ ] Create design system (colors, typography, spacing)
-- [ ] Build component library
-- [ ] Configure Vercel deployment
-
-### Phase 3: Content & Animations (Planned)
-- [ ] Hero section with wrap animation
-- [ ] Timeline visual (ETC 2015 → ERC-20 2017)
-- [ ] Interactive wrap/unwrap diagram
-- [ ] Contract address cards with copy-to-clipboard
-- [ ] Developer integration guide
-
-### Phase 4: Integration & Polish (Planned)
-- [ ] Live WETC supply stats (from contract)
-- [ ] Direct link to ETCswap wrap interface
-- [ ] Classic OS Markets module integration
-- [ ] Mobile optimization
-- [ ] SEO optimization
-- [ ] Analytics integration
-
----
-
-## For Contributors
-
-### Quick Start (Current Site)
+### Prerequisites
 ```bash
-# Clone repository
+node --version  # Should be 22.x
+pnpm --version  # Should be 9.x
+```
+
+### Development
+```bash
+# Clone
 git clone https://github.com/wrappedether/wrappedether.github.io.git
 cd wrappedether.github.io
 
-# Serve locally
-python -m http.server 8000
-# OR
-npx serve .
+# Install
+pnpm install
 
-# Visit http://localhost:8000
+# Dev server
+pnpm dev
+# Visit http://localhost:3000
+
+# Build
+pnpm build
 ```
 
-### v2.0 Development (When Ready)
+### v0.1 (Static HTML - Current Live)
 ```bash
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Deploy to Vercel
-vercel --prod
+# Simple local server
+python3 -m http.server 8080
+# Visit http://localhost:8080
 ```
 
 ---
 
-## Positioning
+## Site Sections
 
-**Type:** Public good / Educational infrastructure
-
-**Purpose:**
-- Educate users about WETC and why wrapped tokens are necessary
-- Explain ETC's historical context (predates ERC-20)
-- Guide users to wrapping/unwrapping interfaces
-- Establish canonical contract addresses
-- Support ETC DeFi ecosystem growth
-
-**Not for Profit:**
-This is a public good project. No revenue generation. Critical infrastructure for:
-- ETCswap (DEX requiring WETC pairs)
-- ClassicUSD (stablecoin requiring WETC)
-- All ETC DeFi protocols using ERC-20 tokens
-
-**Success Metrics:**
-- Users understand what WETC is within 60 seconds
-- Clear path to wrap/unwrap interfaces
-- Reduced confusion about "Why do I need WETC?"
-- Increased WETC adoption for DeFi
+1. **WTF IS WETC?** - Hero introduction
+2. **WHY YOU NEED WETC** - ERC-20 compatibility
+3. **READY TO WRAP?** - CTAs (ETCswap, Classic OS)
+4. **THE CANONICAL WETC** - Contract addresses
+5. **SECURE YOUR WETC** - Trezor support
+6. **BUILT WITH BEST PRACTICES** - `emit` keyword
+7. **WETC ECOSYSTEM** - Partners grid
 
 ---
 
-## How to Wrap/Unwrap WETC
+## Animation Strategy (v0.2)
 
-**Via ETCswap:**
-- V2: https://v2.etcswap.org
-- V3: https://v3.etcswap.org
-- IPFS Gateway: https://ipfs.io/ipfs/bafybeihky5oo4jkowxpkfsywfj6axnxwqo5gkxo5ivztu3xdr6g4nzczgy
+### Custom WETC Animations
 
-**Via Classic OS:**
-- Markets module: app.classicos.org
+We're creating custom SVG + Framer Motion animations to replace WETH.io GIFs:
 
-**How it works:**
-1. Connect your wallet (MetaMask, hardware wallet)
-2. Navigate to wrap interface
-3. Enter amount of ETC to wrap
-4. Confirm transaction
-5. Receive WETC 1:1 (minus gas)
+| Animation | Concept | Status |
+|-----------|---------|--------|
+| BlockchainDapp | Isometric blockchain boxes | Planned |
+| Erc20Jar | Token compatibility jar | Planned |
+| SmartContract | Wrap/unwrap vacuum | Planned |
+| WrapMachine | ETC → WETC conveyor | Planned |
+| Evolution | Future/best practices | Planned |
 
-**To unwrap:**
-1. Same interface, select "Unwrap"
-2. Enter WETC amount
-3. Receive ETC 1:1 (minus gas)
+### Workflow
+1. Claude generates SVG with animation-ready structure
+2. Framer Motion adds smooth animations
+3. React components encapsulate everything
+4. Scroll-triggered reveals on each section
 
----
-
-## Repository
-
-**Current Site (v1.0):** https://github.com/wrappedether/wrappedether.github.io
-
-**Canonical WETC Contract:** https://github.com/wrappedether/canonical-wetc
+See [ANIMATION-GUIDE.md](docs/ANIMATION-GUIDE.md) for details.
 
 ---
 
-## Ecosystem Context
+## Design Inspiration
 
-This site is part of the Ethereum Classic DeFi ecosystem:
+This site is inspired by [WETH.io](https://web.archive.org/web/20240320002559/https://weth.io/):
+- Same section flow (WTF → Why → Ready → Contracts)
+- Same visual metaphors (jar, conveyor, vacuum)
+- Adapted to ETC green (#3AB83A) color palette
+- **Custom animations** (not using WETH.io GIFs in v0.2)
 
-```
-EthereumClassic.com → ClassicOS.org → app.classicos.org
-    ↓                      ↓                 ↓
-wrappedether.org ←← Education layer for WETC
-    ↓                      ↓
-ETCswap ← DeFi protocols requiring WETC
-```
+---
 
-**Why wrappedether.org matters:**
-- **ETCswap** - Requires WETC for all ETC pairs (ETC → WETC → Token swaps)
-- **ClassicUSD** - Stablecoin pairs use WETC
-- **Classic OS Markets** - Portfolio tracking includes WETC
-- **Olympia DAO** - Governance may use WETC
-- **All DeFi** - Any protocol using ERC-20 tokens needs WETC to interact with ETC
+## Product Funnels
 
-**Without WETC:**
-- No direct ETC ↔ ERC-20 token swaps
-- No ETC liquidity pairs on DEXs
-- Limited DeFi participation for ETC holders
+| Product | URL | Purpose |
+|---------|-----|---------|
+| **ETCswap** | https://etcswap.org | Wrap/unwrap ETC, trade |
+| **Classic OS** | https://app.classicos.org | Portfolio management |
+| **Trezor** | https://trezor.io/trezor-suite | Hardware wallet storage |
 
-**With WETC:**
-- ✅ Swap ETC for any ERC-20 token
-- ✅ Provide liquidity and earn fees
-- ✅ Full DeFi ecosystem participation
-- ✅ Non-custodial, trustless 1:1 backing
+---
+
+## Key Features
+
+- **Trezor Support** - Store WETC on hardware wallets
+- **Classic USD Example** - WETC/USC mirrors ETC/USDC
+- **Modern Contract** - Uses `emit` keyword (Gnosis Solidity 0.5+ update)
+- **IPFS Backup** - Censorship-resistant access
+- **Mobile Responsive** - Works on all devices
+
+---
+
+## Development Docs
+
+| Document | Description |
+|----------|-------------|
+| [V0.2-PLAN.md](docs/V0.2-PLAN.md) | Full development roadmap |
+| [ANIMATION-GUIDE.md](docs/ANIMATION-GUIDE.md) | SVG + Framer Motion workflow |
+| [WETH-IO-ANALYSIS.md](docs/WETH-IO-ANALYSIS.md) | Visual design analysis |
+
+---
+
+## Attribution
+
+### WETH.io Project
+Inspired by [WETH.io](https://web.archive.org/web/20240320002559/https://weth.io/). Thanks to:
+- **Nikolai Mushegian** ([@delete_shitcoin](https://twitter.com/delete_shitcoin))
+- **DappHub** ([@dapphub](https://twitter.com/dapphub))
+
+### Gnosis WETH9 Update
+Contract updated to Solidity 0.5+ best practices by [Gnosis](https://gnosis.io).
+
+### `emit` Keyword
+- [Solidity v0.4.21 Release](https://github.com/ethereum/solidity/releases/tag/v0.4.21)
+- ['emit' keyword in Solidity](https://aniketengg.medium.com/emit-keyword-in-solidity-242a679b0e1a)
+
+---
+
+## Links
+
+### Product
+- Website: https://wrappedether.org
+- IPFS: https://ipfs.io/ipfs/bafybeihky5oo4jkowxpkfsywfj6axnxwqo5gkxo5ivztu3xdr6g4nzczgy
+
+### Market Data
+- CoinGecko: https://www.coingecko.com/coins/wetc
+- Gecko Terminal: https://www.geckoterminal.com/ethereum_classic/pools
+
+### Code
+- Website Repo: https://github.com/wrappedether/wrappedether.github.io
+- Contract Repo: https://github.com/wrappedether/canonical-wetc
 
 ---
 
 ## License
 
-Creative Commons Attribution-ShareAlike 3.0 Unported License
-
-See: http://creativecommons.org/licenses/by-sa/3.0/
-
----
-
-## Contact
-
-**Maintainer:** Christopher Mercer (ETCswap founder)
-
-**Contract Issues:** https://github.com/wrappedether/canonical-wetc/issues
-
-**Website Issues:** https://github.com/wrappedether/wrappedether.github.io/issues
+Creative Commons Attribution-ShareAlike 3.0 Unported
+http://creativecommons.org/licenses/by-sa/3.0/
 
 ---
 
-## For AI Coding Assistants
+## Contributing
 
-See [.claude/instructions.md](.claude/instructions.md) for development guidelines when working on v2.0 modernization.
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/improvement`)
+3. Make changes
+4. Test locally (`pnpm dev`)
+5. Submit PR
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+---
+
+*Made with care by the Ethereum Classic community at [ethereumclassic.com](https://ethereumclassic.com)*
+
+**This is a public good. Fast, beautiful, educational.**

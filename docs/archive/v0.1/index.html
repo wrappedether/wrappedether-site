@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <title>WETC | Wrapped Ether on Ethereum Classic</title>
+    <meta name="description" content="WETC is the ERC-20 tokenized version of ETC for DeFi on Ethereum Classic. Trade on ETCswap, track on CoinGecko, store on Trezor.">
+    <meta name="keywords" content="WETC, Wrapped ETC, Ethereum Classic, ERC-20, ETCswap, DeFi, Classic USD, USC">
+    <meta name="author" content="Ethereum Classic Community">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="WETC | Wrapped Ether on Ethereum Classic">
+    <meta property="og:description" content="The ERC-20 tokenized version of ETC for DeFi. Non-custodial, 1:1 backed, trustless.">
+    <meta property="og:image" content="https://wrappedether.org/images/wrapped-ether.png">
+    <meta property="og:url" content="https://wrappedether.org">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WETC | Wrapped Ether on Ethereum Classic">
+    <meta name="twitter:description" content="The ERC-20 tokenized version of ETC for DeFi.">
+    <meta name="twitter:image" content="https://wrappedether.org/images/wrapped-ether.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="apple-touch-icon" href="./images/wrapped-ether.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./stylesheets/wetc.css">
+</head>
+<body>
+    <main id="main">
+
+        <!-- ============================================
+             SECTION 1: WTF IS WETC? (Hero)
+             ============================================ -->
+        <section class="hero" aria-labelledby="wtf-is-wetc">
+            <div class="hero-head">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column text-center">
+                            <h1 class="header-text" id="wtf-is-wetc">
+                                WTF IS WETC?
+                            </h1>
+                            <div class="section-divider">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <!-- Text Content -->
+                        <div class="column is-6">
+                            <h2 class="header-paragraph">Put plainly, WETC is "wrapped ETC" but let's start by introducing the players.</h2>
+
+                            <h3 class="header-paragraph">FIRST, THERE'S THE ETHER TOKEN</h3>
+                            <h4 class="header-paragraph">Ether or <a href="https://www.coingecko.com/coins/ethereum-classic" target="_blank" rel="noopener">ETC</a> is the native currency built on the Ethereum Classic blockchain, the original Ethereum Virtual Machine (EVM) launched in 2015.</h4>
+
+                            <h3 class="header-paragraph">SECOND, THERE ARE ALT TOKENS</h3>
+                            <h4 class="header-paragraph">When a dApp (decentralized app) is built on top of the Ethereum Classic blockchain it usually implements its own form of token. Real world assets may be pegged 1:1 to a token on Ethereum Classic like US Dollars to the <a href="https://www.coingecko.com/coins/classic-usd" target="_blank" rel="noopener">Classic USD (USC)</a> stablecoin.</h4>
+
+                            <h3 class="header-paragraph">FINALLY THE ERC-20 STANDARD</h3>
+                            <h4 class="header-paragraph margin-bottom">ERC-20 is a standard developed after the release of ETC that defines how tokens are transferred and how to keep a consistent record of those transfers among tokens on the Ethereum Classic network.</h4>
+                        </div>
+
+                        <!-- Animation/Image -->
+                        <div class="column is-6">
+                            <figure>
+                                <img class="wetc-gif image-center"
+                                     src="./images/weth-io/WETH_01.gif"
+                                     alt="Blockchain and dApp relationship diagram showing Ethereum Classic as the foundation with dApps built on top">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 2: WHY YOU NEED WETC
+             ============================================ -->
+        <section class="hero is-alt" aria-labelledby="why-you-need-wetc">
+            <div class="hero-head">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column text-center">
+                            <h2 class="header-text" id="why-you-need-wetc">
+                                WHY YOU NEED WETC
+                            </h2>
+                            <div class="section-divider">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 1: ETC doesn't conform -->
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns reverse-mobile">
+                        <!-- Animation/Image -->
+                        <div class="column is-6">
+                            <figure>
+                                <img class="wetc-gif image-center"
+                                     src="./images/weth-io/WETH_02.gif"
+                                     alt="ERC-20 compliant token jar showing ETC cannot enter DeFi protocols directly">
+                            </figure>
+                        </div>
+
+                        <!-- Text Content -->
+                        <div class="column is-6">
+                            <h3 class="header-paragraph margin-top-25">ETC DOESN'T CONFORM TO THE ERC-20 STANDARD</h3>
+                            <h4 class="header-paragraph">As mentioned above, <a href="https://coinmarketcap.com/currencies/ethereum-classic/" target="_blank" rel="noopener">ETC</a> was the proto-token of the Ethereum Classic ecosystem, which means it was built before the ERC-20 standard existed.</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 2: Wrapping enables trading -->
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns reverse-mobile">
+                        <!-- Animation/Image -->
+                        <div class="column is-6">
+                            <figure>
+                                <img class="wetc-gif image-center"
+                                     src="./images/weth-io/WETH_03.gif"
+                                     alt="Smart contract vacuum showing how WETC enables trading with other ERC-20 tokens">
+                            </figure>
+                        </div>
+
+                        <!-- Text Content -->
+                        <div class="column is-6">
+                            <h3 class="header-paragraph margin-top-20">WRAPPING ETC ALLOWS YOU TO TRADE DIRECTLY WITH ALT TOKENS</h3>
+                            <h4 class="header-paragraph">The reason you need WETC is to be able to trade ETC for other ERC-20 tokens on decentralized exchanges like <a href="https://etcswap.org" target="_blank" rel="noopener">ETCswap</a>. Because decentralized platforms running on Ethereum Classic use smart contracts to facilitate trades directly between users, every user needs to have the same standardized format for every token they trade. This ensures tokens don't get lost in translation.</h4>
+
+                            <div class="highlight-box" style="margin-top: 2rem;">
+                                <h4 style="color: var(--etc-green); margin-bottom: 0.5rem;">Example Trading Pairs</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                                    <span class="trading-pair">WETC <span class="pair-separator">/</span> USC</span> on DEX (ETCswap)<br>
+                                    <span style="font-size: 0.85rem; opacity: 0.8;">Mirrors ETC/USDC on centralized exchanges</span>
+                                </p>
+                                <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 1rem;">
+                                    <a href="https://classicusd.com" target="_blank" rel="noopener">Classic USD (USC)</a> is backed 1:1 by real US dollars through <a href="https://brale.xyz" target="_blank" rel="noopener">Brale</a> &mdash; a regulated fiat stablecoin, not over-collateralized.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 3: READY TO WRAP?
+             ============================================ -->
+        <section class="hero" aria-labelledby="ready-to-wrap">
+            <div class="hero-head">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column text-center">
+                            <h2 class="header-text" id="ready-to-wrap">
+                                READY TO WRAP?
+                            </h2>
+                            <div class="section-divider">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 1: You don't actually wrap -->
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <!-- Text Content -->
+                        <div class="column is-6">
+                            <h3 class="header-paragraph margin-top-20">SO THIS IS AWKWARD... YOU DON'T ACTUALLY WRAP ANYTHING</h3>
+                            <h4 class="header-paragraph">When you "wrap" ETC, you aren't really wrapping so much as trading via a non-custodial smart contract for an equal token called WETC. If you want to get plain ETC back you need to "unwrap" it, or trade WETC back for plain ETC.</h4>
+                            <h4 class="header-paragraph">You can easily wrap/unwrap ETC through <a href="https://etcswap.org" target="_blank" rel="noopener">ETCswap</a>'s user interfaces or view your portfolio on <a href="https://app.classicos.org" target="_blank" rel="noopener">Classic OS</a>.</h4>
+                        </div>
+
+                        <!-- Animation/Image -->
+                        <div class="column is-6">
+                            <figure>
+                                <img class="wetc-gif image-center"
+                                     src="./images/weth-io/WETH_04.gif"
+                                     alt="ETC to WETC conversion process through smart contract">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part 2: Where to wrap CTAs -->
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <h3 class="header-paragraph margin-top">GET STARTED WITH WETC</h3>
+                            <h4 class="header-paragraph margin-bottom-2x">Once you have WETC you can freely trade with anyone holding an ERC-20 token on Ethereum Classic.</h4>
+                        </div>
+
+                        <!-- CTA Cards -->
+                        <div class="column is-3">
+                            <a href="https://etcswap.org" target="_blank" rel="noopener" class="card" style="display: block; text-decoration: none;">
+                                <img src="./images/etc-logo-green-black-circle.png" alt="ETCswap" class="card-logo image-center" style="width: 80px; height: 80px;">
+                                <h4 class="card-title text-center">ETCswap</h4>
+                                <p class="card-description text-center">Wrap/unwrap ETC and trade on the leading ETC DEX</p>
+                            </a>
+                        </div>
+
+                        <div class="column is-3">
+                            <a href="https://app.classicos.org" target="_blank" rel="noopener" class="card" style="display: block; text-decoration: none;">
+                                <img src="./images/etc-logo-black-green-circle.png" alt="Classic OS" class="card-logo image-center" style="width: 80px; height: 80px;">
+                                <h4 class="card-title text-center">Classic OS</h4>
+                                <p class="card-description text-center">Economic command center for Ethereum Classic</p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- IPFS Backup Link -->
+                    <div class="columns">
+                        <div class="column text-center" style="margin-top: 1rem;">
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">
+                                Bookmark this censorship-resistant <a href="https://ipfs.io/ipfs/bafybeihky5oo4jkowxpkfsywfj6axnxwqo5gkxo5ivztu3xdr6g4nzczgy" target="_blank" rel="noopener">IPFS gateway</a> which is always available through the distributed web.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 4: CANONICAL CONTRACTS
+             ============================================ -->
+        <section class="hero is-alt" aria-labelledby="canonical-contracts">
+            <div class="hero-head">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column text-center">
+                            <h2 class="header-text" id="canonical-contracts">
+                                THE CANONICAL WETC
+                            </h2>
+                            <div class="section-divider">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column">
+                            <p class="header-paragraph text-center">Only use these official WETC contract addresses. The same contract is deployed on both mainnet and testnet.</p>
+
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Network</th>
+                                        <th>Chain ID</th>
+                                        <th>Consensus</th>
+                                        <th>Contract Address</th>
+                                        <th>Tx Hash</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Mainnet:</strong> Ethereum Classic</td>
+                                        <td>61</td>
+                                        <td>Proof of Work</td>
+                                        <td><a href="https://etc.blockscout.com/address/0x1953cab0E5bFa6D4a9BaD6E05fD46C1CC6527a5a" target="_blank" rel="noopener">0x1953cab0E5bFa6D4a9BaD6E05fD46C1CC6527a5a</a></td>
+                                        <td><a href="https://etc.blockscout.com/tx/0x9bb5a4821e6685a6f33e7464cf16b149f69c75c8ba8dde4c1dc134c095e2259e" target="_blank" rel="noopener">0x9bb...2259e</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Testnet:</strong> Mordor</td>
+                                        <td>63</td>
+                                        <td>Proof of Work</td>
+                                        <td><a href="https://etc-mordor.blockscout.com/address/0x1953cab0E5bFa6D4a9BaD6E05fD46C1CC6527a5a" target="_blank" rel="noopener">0x1953cab0E5bFa6D4a9BaD6E05fD46C1CC6527a5a</a></td>
+                                        <td><a href="https://etc-mordor.blockscout.com/tx/0x895b9b415c37952b28398e0615a1e5eb8d3b3042ca36a89f46aff93c5aea212d" target="_blank" rel="noopener">0x895...a212d</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <p class="text-center" style="margin-top: 2rem;">
+                                <a href="https://github.com/wrappedether/canonical-wetc" target="_blank" rel="noopener" class="btn btn-outline">View Source on GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 5: HARDWARE WALLET SUPPORT (Trezor)
+             ============================================ -->
+        <section class="hero" aria-labelledby="hardware-wallet">
+            <div class="hero-head">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column text-center">
+                            <h2 class="header-text" id="hardware-wallet">
+                                SECURE YOUR WETC
+                            </h2>
+                            <div class="section-divider">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <h3 class="header-paragraph">TREZOR SUPPORTS WETC</h3>
+                            <h4 class="header-paragraph">You can store your WETC and ETC safely on your <a href="https://trezor.io/trezor-suite" target="_blank" rel="noopener">Trezor hardware wallet</a>. Trezor Suite fully supports Ethereum Classic's ERC-20 tokens, giving you cold storage security for your DeFi assets.</h4>
+
+                            <ul class="icon-list">
+                                <li>Store WETC alongside your native ETC</li>
+                                <li>Full ERC-20 token support on Ethereum Classic</li>
+                                <li>Connect to ETCswap with hardware wallet security</li>
+                                <li>Sign transactions safely offline</li>
+                            </ul>
+
+                            <p style="margin-top: 2rem;">
+                                <a href="https://trezor.io/trezor-suite" target="_blank" rel="noopener" class="btn btn-primary">Get Trezor Suite</a>
+                            </p>
+                        </div>
+
+                        <div class="column is-6">
+                            <div class="highlight-box">
+                                <h4 style="color: var(--etc-green);">Why Hardware Wallets?</h4>
+                                <p style="color: var(--text-secondary);">
+                                    Your private keys never leave the device. Even if your computer is compromised, your assets remain secure. For DeFi users holding WETC for trading or liquidity provision, hardware wallet security is essential.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 6: MODERN BEST PRACTICES (emit)
+             ============================================ -->
+        <section class="hero is-alt" aria-labelledby="best-practices">
+            <div class="hero-head">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column text-center">
+                            <h2 class="header-text" id="best-practices">
+                                BUILT WITH BEST PRACTICES
+                            </h2>
+                            <div class="section-divider">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-6">
+                            <figure>
+                                <img class="wetc-gif image-center"
+                                     src="./images/weth-io/WETH_05.gif"
+                                     alt="Ethereum Classic blockchain evolution">
+                            </figure>
+                        </div>
+
+                        <div class="column is-6">
+                            <h3 class="header-paragraph margin-top-20">THE <code>emit</code> KEYWORD MATTERS</h3>
+                            <h4 class="header-paragraph">The WETC contract was updated by <a href="https://www.gnosis.io" target="_blank" rel="noopener">Gnosis</a> to Solidity 0.5+ best practices. Unlike older WETC contracts that may not follow modern standards, this canonical WETC uses the <code>emit</code> keyword for all events.</h4>
+
+                            <blockquote>
+                                In Solidity v0.4.21 (March 2018), the <code>emit</code> keyword was introduced to emit events. This helps differentiate functions from events &mdash; a confusion that was one of the reasons for TheDAO Hack which led to the hard fork and gave birth to Ethereum Classic.
+                            </blockquote>
+
+                            <h4 class="header-paragraph">This means WETC is:</h4>
+                            <ul class="icon-list">
+                                <li>Compatible with modern Solidity tooling</li>
+                                <li>Follows current security best practices</li>
+                                <li>Easier to audit and integrate</li>
+                                <li>Properly emits events for better indexing</li>
+                            </ul>
+
+                            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+                                Learn more: <a href="https://aniketengg.medium.com/emit-keyword-in-solidity-242a679b0e1a" target="_blank" rel="noopener">'emit' keyword in Solidity</a> by Aniket
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 7: ECOSYSTEM INTEGRATIONS
+             ============================================ -->
+        <section class="hero" aria-labelledby="ecosystem">
+            <div class="hero-head">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column text-center">
+                            <h2 class="header-text" id="ecosystem">
+                                WETC ECOSYSTEM
+                            </h2>
+                            <div class="section-divider">
+                                <span></span><span></span><span></span><span></span><span></span>
+                            </div>
+                            <p class="header-paragraph">WETC is live and integrated across the Ethereum Classic DeFi ecosystem.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-body">
+                <div class="container">
+                    <div class="partner-grid">
+                        <a href="https://etcswap.org" target="_blank" rel="noopener" class="partner-item">
+                            <img src="./images/etc-logo-green-black-circle.png" alt="ETCswap">
+                            <span>ETCswap</span>
+                        </a>
+                        <a href="https://classicusd.com" target="_blank" rel="noopener" class="partner-item">
+                            <img src="./images/etc-logo-black-green-circle.png" alt="Classic USD">
+                            <span>Classic USD</span>
+                        </a>
+                        <a href="https://app.classicos.org" target="_blank" rel="noopener" class="partner-item">
+                            <img src="./images/etc-logo-white-green-circle.png" alt="Classic OS">
+                            <span>Classic OS</span>
+                        </a>
+                        <a href="https://www.coingecko.com/coins/wetc" target="_blank" rel="noopener" class="partner-item">
+                            <img src="./images/etc-logo-green-white-circle.png" alt="CoinGecko">
+                            <span>CoinGecko</span>
+                        </a>
+                        <a href="https://www.geckoterminal.com/ethereum_classic/pools" target="_blank" rel="noopener" class="partner-item">
+                            <img src="./images/etc-logo-black-white-circle.png" alt="Gecko Terminal">
+                            <span>Gecko Terminal</span>
+                        </a>
+                        <a href="https://trezor.io/trezor-suite" target="_blank" rel="noopener" class="partner-item">
+                            <img src="./images/etc-logo-white-black-circle.png" alt="Trezor">
+                            <span>Trezor Suite</span>
+                        </a>
+                        <a href="https://hummingbot.org" target="_blank" rel="noopener" class="partner-item">
+                            <img src="./images/ethereum-classic.png" alt="Hummingbot">
+                            <span>Hummingbot</span>
+                        </a>
+                        <a href="https://launchpad.etcswap.org" target="_blank" rel="noopener" class="partner-item">
+                            <img src="./images/wrapped-ether.png" alt="Launchpad">
+                            <span>ETCswap Launchpad</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="container">
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <a href="https://etc.blockscout.com/address/0x1953cab0E5bFa6D4a9BaD6E05fD46C1CC6527a5a" target="_blank" rel="noopener">BlockScout</a>
+                <a href="https://www.coingecko.com/coins/wetc" target="_blank" rel="noopener">CoinGecko</a>
+                <a href="https://coinmarketcap.com/currencies/ethereum-classic/" target="_blank" rel="noopener">CoinMarketCap</a>
+                <a href="https://www.tradingview.com/symbols/ETCUSD/" target="_blank" rel="noopener">TradingView</a>
+                <a href="https://github.com/wrappedether/canonical-wetc" target="_blank" rel="noopener">GitHub</a>
+            </div>
+
+            <!-- Attribution -->
+            <div class="footer-attribution">
+                <p>The greater EVM stands on the shoulders of giants.</p>
+                <p>Inspired by the <a href="https://web.archive.org/web/20240320002559/https://weth.io/" target="_blank" rel="noopener">WETH.io</a> project. Thank you to <a href="https://twitter.com/delete_shitcoin" target="_blank" rel="noopener">Nikolai Mushegian</a> and the <a href="https://twitter.com/dapphub" target="_blank" rel="noopener">DappHub</a> participants.</p>
+                <p style="margin-top: 1rem;">
+                    <strong>Note:</strong> WETC Contract was updated by <a href="https://www.gnosis.io" target="_blank" rel="noopener">Gnosis</a> to Solidity 0.5+ best practices.
+                    <a href="https://aniketengg.medium.com/emit-keyword-in-solidity-242a679b0e1a" target="_blank" rel="noopener">Why?</a>
+                </p>
+                <p style="margin-top: 2rem;">
+                    Made with <span class="footer-heart">&#9829;</span> by <a href="https://ethereumclassic.com" target="_blank" rel="noopener">ethereumclassic.com</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
