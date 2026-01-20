@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+/* =============================================
+   WETC - Ethereum Classic Theme
+   ETC Green + Black palette
+   ============================================= */
+
+:root {
+  /* ETC Brand Colors */
+  --etc-green: #3AB83A;
+  --etc-green-light: #33ff99;
+  --etc-green-dark: #2d8f2d;
+
+  /* Neutrals */
+  --etc-black: #0a0a0a;
+  --etc-dark: #141414;
+  --etc-gray: #1a1a1a;
+  --etc-gray-light: #2a2a2a;
+
+  /* Text */
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #6b6b6b;
+
+  /* Sections (semi-transparent to show background system) */
+  --section-default: transparent;
+  --section-alt: rgba(15, 31, 15, 0.65);
+
+  /* Base theme variables */
+  --background: var(--etc-black);
+  --foreground: var(--text-primary);
+}
+
+/* Tailwind 4 theme extension */
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-etc-green: var(--etc-green);
+  --color-etc-green-light: var(--etc-green-light);
+  --color-etc-green-dark: var(--etc-green-dark);
+  --color-etc-black: var(--etc-black);
+  --color-etc-dark: var(--etc-dark);
+  --color-etc-gray: var(--etc-gray);
+  --color-etc-gray-light: var(--etc-gray-light);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-section-default: var(--section-default);
+  --color-section-alt: var(--section-alt);
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Spacing - using Tailwind defaults */
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--etc-green);
+  color: var(--etc-black);
+}
+
+/* Scrollbar (webkit) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--etc-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--etc-gray-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--etc-green);
+}
+
+/* Links */
+a {
+  color: var(--etc-green);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--etc-green-light);
+}
+
+/* Code */
+code {
+  font-family: var(--font-mono);
+  background-color: var(--etc-gray);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--etc-green-light);
+}
+
+pre {
+  font-family: var(--font-mono);
+  background-color: var(--etc-gray);
+  border: 1px solid var(--etc-gray-light);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 2px solid var(--etc-green);
+  outline-offset: 2px;
+}
+
+/* =============================================
+   Background Utilities
+   ============================================= */
+
+/* Grid patterns */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(58, 184, 58, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(58, 184, 58, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-grid-sm {
+  background-image:
+    linear-gradient(to right, rgba(58, 184, 58, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(58, 184, 58, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Gradient utilities */
+.bg-gradient-radial {
+  background: radial-gradient(ellipse at center, rgba(58, 184, 58, 0.15) 0%, transparent 70%);
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(180deg, var(--etc-black) 0%, var(--etc-dark) 100%);
+}
+
+/* Text gradients */
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-etc {
+  background: linear-gradient(135deg, var(--etc-green-light) 0%, var(--etc-green) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glow effects */
+.glow-etc {
+  box-shadow: 0 0 20px rgba(58, 184, 58, 0.3);
+}
+
+.glow-etc-light {
+  box-shadow: 0 0 30px rgba(51, 255, 153, 0.4);
+}
+
+/* Pulse glow animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(58, 184, 58, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(51, 255, 153, 0.5);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Panel styles */
+.panel {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(58, 184, 58, 0.15);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(8px);
+}
+
+.panel-strong {
+  background: rgba(58, 184, 58, 0.08);
+  border: 1px solid rgba(58, 184, 58, 0.25);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(12px);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
