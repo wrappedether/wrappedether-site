@@ -74,7 +74,7 @@ export function SecureYourWetc() {
 
             <div className="pt-4">
               <Button href={PRODUCTS.trezor.url} variant="primary" external>
-                Get Trezor Suite
+                Get Trezor
               </Button>
             </div>
           </motion.div>

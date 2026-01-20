@@ -38,13 +38,13 @@ export function Card({
       whileHover="hover"
     >
       {image && (
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center items-center mb-4 h-20">
           <Image
             src={image}
             alt={imageAlt}
             width={80}
             height={80}
-            className="rounded-full"
+            className="object-contain max-h-20"
           />
         </div>
       )}
@@ -86,13 +86,15 @@ export function PartnerCard({
       whileHover={{ y: -2 }}
       transition={{ duration: 0.2 }}
     >
-      <Image
-        src={image}
-        alt={name}
-        width={48}
-        height={48}
-        className="rounded-full mb-2"
-      />
+      <div className="flex items-center justify-center h-12 mb-2">
+        <Image
+          src={image}
+          alt={name}
+          width={48}
+          height={48}
+          className="object-contain max-h-12"
+        />
+      </div>
       <span className="text-sm text-text-secondary text-center">
         {name}
       </span>

@@ -1,52 +1,115 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { SectionDivider, PartnerCard } from '@/components/ui';
-import { fadeInUp, staggerContainer, staggerItem, viewportSettings } from '@/lib/animations';
-import { PRODUCTS, LINKS } from '@/lib/constants';
+import { SectionDivider } from '@/components/ui';
+import { fadeInUp, viewportSettings } from '@/lib/animations';
+import { PRODUCTS, LINKS, CHAINS } from '@/lib/constants';
+import Image from 'next/image';
 
 const ecosystemPartners = [
   {
-    name: 'ETCswap',
-    href: PRODUCTS.etcswap.url,
-    image: '/images/etc-logo-green-black-circle.png',
-  },
-  {
-    name: 'Classic USD',
-    href: PRODUCTS.classicUsd.url,
-    image: '/images/etc-logo-black-green-circle.png',
-  },
-  {
-    name: 'Classic OS',
-    href: PRODUCTS.classicOs.url,
-    image: '/images/etc-logo-white-green-circle.png',
-  },
-  {
     name: 'CoinGecko',
     href: LINKS.coingecko,
-    image: '/images/etc-logo-green-white-circle.png',
+    image: '/images/logos/coingecko.svg',
+  },
+  {
+    name: 'CoinMarketCap',
+    href: LINKS.coinmarketcap,
+    image: '/images/logos/coinmarketcap.svg',
+    needsLightBg: true,
+  },
+  {
+    name: 'Blockscout',
+    href: CHAINS.mainnet.explorer,
+    image: '/images/logos/blockscout.svg',
   },
   {
     name: 'Gecko Terminal',
     href: LINKS.geckoTerminal,
-    image: '/images/etc-logo-black-white-circle.png',
+    image: '/images/logos/geckoterminal.svg',
   },
   {
-    name: 'Trezor Suite',
+    name: 'Classic OS',
+    href: PRODUCTS.classicOs.url,
+    image: '/images/logos/classicos.svg',
+  },
+  {
+    name: 'Trezor',
     href: PRODUCTS.trezor.url,
-    image: '/images/etc-logo-white-black-circle.png',
+    image: '/images/logos/trezor.svg',
+    needsLightBg: true,
   },
   {
-    name: 'BlockScout',
-    href: 'https://etc.blockscout.com',
-    image: '/images/ethereum-classic.png',
+    name: 'MetaMask',
+    href: 'https://metamask.io',
+    image: '/images/logos/metamask.svg',
   },
   {
-    name: 'ETCswap Launchpad',
-    href: 'https://launchpad.etcswap.org',
-    image: '/images/wrapped-ether.png',
+    name: 'ETCswap',
+    href: PRODUCTS.etcswap.url,
+    image: '/images/logos/etcswapv3.svg',
   },
 ];
+
+function LogoCarousel() {
+  // Triple the array for truly seamless looping
+  const triplePartners = [...ecosystemPartners, ...ecosystemPartners, ...ecosystemPartners];
+
+  return (
+    <div className="relative overflow-hidden py-8">
+      {/* Gradient fade on edges */}
+      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
+      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+
+      {/* CSS-based infinite scroll for seamless animation */}
+      <div className="flex animate-scroll">
+        {triplePartners.map((partner, index) => (
+          <a
+            key={`${partner.name}-${index}`}
+            href={partner.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 mx-8 group"
+          >
+            <div className="flex flex-col items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
+              <div className={`h-12 flex items-center justify-center ${partner.needsLightBg ? 'bg-white/80 rounded-lg px-2' : ''}`}>
+                <Image
+                  src={partner.image}
+                  alt={partner.name}
+                  width={120}
+                  height={48}
+                  className="h-12 w-auto object-contain"
+                />
+              </div>
+              <span className="text-xs text-text-secondary group-hover:text-white transition-colors whitespace-nowrap">
+                {partner.name}
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      {/* Inline styles for the animation */}
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-160px * ${ecosystemPartners.length}));
+          }
+        }
+        .animate-scroll {
+          animation: scroll 40s linear infinite;
+          width: fit-content;
+        }
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </div>
+  );
+}
 
 export function Ecosystem() {
   return (
@@ -54,7 +117,7 @@ export function Ecosystem() {
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-8"
           initial="hidden"
           whileInView="visible"
           viewport={viewportSettings}
@@ -72,23 +135,14 @@ export function Ecosystem() {
           </p>
         </motion.div>
 
-        {/* Partner Grid */}
+        {/* Logo Carousel */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={viewportSettings}
-          variants={staggerContainer}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"
+          variants={fadeInUp}
         >
-          {ecosystemPartners.map((partner) => (
-            <motion.div key={partner.name} variants={staggerItem}>
-              <PartnerCard
-                name={partner.name}
-                href={partner.href}
-                image={partner.image}
-              />
-            </motion.div>
-          ))}
+          <LogoCarousel />
         </motion.div>
       </div>
     </section>

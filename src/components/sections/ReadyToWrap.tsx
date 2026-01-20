@@ -100,7 +100,7 @@ export function ReadyToWrap() {
                 title={PRODUCTS.etcswap.name}
                 description={PRODUCTS.etcswap.description}
                 href={PRODUCTS.etcswap.url}
-                image="/images/etc-logo-green-black-circle.png"
+                image="/images/logos/etcswapv3.svg"
                 imageAlt="ETCswap logo"
               />
             </motion.div>
@@ -109,7 +109,7 @@ export function ReadyToWrap() {
                 title={PRODUCTS.classicOs.name}
                 description={PRODUCTS.classicOs.description}
                 href={PRODUCTS.classicOs.url}
-                image="/images/etc-logo-black-green-circle.png"
+                image="/images/logos/classicos.svg"
                 imageAlt="Classic OS logo"
               />
             </motion.div>

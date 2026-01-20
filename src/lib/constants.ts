@@ -45,7 +45,7 @@ export const PRODUCTS = {
   },
   classicOs: {
     name: 'Classic OS',
-    url: 'https://app.classicos.org',
+    url: 'https://classicos.org',
     description: 'Economic command center for Ethereum Classic',
   },
   classicUsd: {
@@ -54,8 +54,8 @@ export const PRODUCTS = {
     description: 'USD stablecoin on Ethereum Classic',
   },
   trezor: {
-    name: 'Trezor Suite',
-    url: 'https://trezor.io/trezor-suite',
+    name: 'Trezor',
+    url: 'https://affil.trezor.io/aff_c?offer_id=133&aff_id=34561',
     description: 'Hardware wallet for secure storage',
   },
 } as const;
