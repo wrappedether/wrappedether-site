@@ -88,5 +88,16 @@ export const SITE = {
   title: 'WETC | Wrapped Ether on Ethereum Classic',
   description: 'WETC is the ERC-20 tokenized version of ETC for DeFi on Ethereum Classic. Trade on ETCswap, track on CoinGecko, store on Trezor.',
   url: 'https://wrappedether.org',
-  image: '/images/wrapped-ether.png',
+  image: '/images/og-wetc.png',
+  version: '0.2.0',
+  twitterHandle: '@eth_classic',
+} as const;
+
+// SEO Keywords organized by category
+export const SEO_KEYWORDS = {
+  primary: ['WETC', 'Wrapped ETC', 'Wrapped Ether', 'Ethereum Classic'],
+  defi: ['DeFi', 'ERC-20', 'DEX', 'decentralized exchange', 'liquidity'],
+  products: ['ETCswap', 'Classic USD', 'USC', 'Classic OS'],
+  technical: ['smart contract', 'token wrapping', 'ETC blockchain', 'Solidity'],
+  trading: ['crypto trading', 'token swap', 'ETC trading', 'WETC/USC'],
 } as const;

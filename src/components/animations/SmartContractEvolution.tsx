@@ -90,7 +90,7 @@ export function SmartContractEvolution({ className = '' }: SmartContractEvolutio
           fontSize="11"
           fontFamily="monospace"
         >
-          <tspan fill="#6a9955">// Solidity &lt;0.5</tspan>
+          <tspan fill="#6a9955">{'// Solidity <0.5'}</tspan>
         </text>
 
         {/* Old code - line 2 */}
@@ -241,7 +241,7 @@ export function SmartContractEvolution({ className = '' }: SmartContractEvolutio
           fontSize="11"
           fontFamily="monospace"
         >
-          <tspan fill="#6a9955">// Solidity 0.5+</tspan>
+          <tspan fill="#6a9955">{'// Solidity 0.5+'}</tspan>
         </text>
 
         {/* New code - line 2 */}
