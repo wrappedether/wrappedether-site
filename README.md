@@ -66,38 +66,37 @@
 ### Deployment
 | Service | Purpose |
 |---------|---------|
-| Vercel | Hosting (free tier) |
-| GitHub Actions | CI/CD |
+| Vercel | Hosting & builds |
+| GitHub | Source control |
 
 ---
 
-## Project Structure (v0.2)
+## Project Structure
 
 ```
-wrappedether/
+wrappedether-site/
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx          # Root layout
+│   │   ├── layout.tsx          # Root layout with SEO metadata
 │   │   ├── page.tsx            # Main page
-│   │   └── globals.css         # Tailwind
+│   │   └── globals.css         # Tailwind styles
 │   ├── components/
-│   │   ├── sections/           # Page sections
+│   │   ├── sections/           # Page sections (Hero, WhyWetc, etc.)
 │   │   ├── animations/         # Custom SVG animations
 │   │   ├── ui/                 # Reusable UI components
+│   │   ├── BackgroundSystem.tsx
 │   │   └── Footer.tsx
 │   └── lib/
-│       ├── constants.ts        # Contract addresses
+│       ├── constants.ts        # Contract addresses, URLs, SEO keywords
 │       └── animations.ts       # Framer Motion variants
 ├── public/
-│   ├── images/
-│   └── fonts/
-├── research/
-│   └── weth-io/                # Reference materials
-├── docs/
-│   ├── V0.2-PLAN.md           # Development plan
-│   ├── ANIMATION-GUIDE.md     # Animation workflow
-│   └── WETH-IO-ANALYSIS.md    # Visual analysis
-└── package.json
+│   └── images/                 # Logos, OG images, favicons
+├── docs/                       # Development documentation
+├── research/                   # Reference materials
+├── package.json
+├── next.config.ts
+├── tsconfig.json
+└── eslint.config.mjs
 ```
 
 ---
@@ -113,8 +112,8 @@ pnpm --version  # Should be 9.x
 ### Development
 ```bash
 # Clone
-git clone https://github.com/wrappedether/wrappedether.github.io.git
-cd wrappedether.github.io
+git clone https://github.com/wrappedether/wrappedether-site.git
+cd wrappedether-site
 
 # Install
 pnpm install
@@ -125,13 +124,9 @@ pnpm dev
 
 # Build
 pnpm build
-```
 
-### v0.1 (Static HTML - Current Live)
-```bash
-# Simple local server
-python3 -m http.server 8080
-# Visit http://localhost:8080
+# Lint
+pnpm lint
 ```
 
 ---
@@ -240,7 +235,8 @@ Contract updated to Solidity 0.5+ best practices by [Gnosis](https://gnosis.io).
 - Gecko Terminal: https://www.geckoterminal.com/ethereum_classic/pools
 
 ### Code
-- Website Repo: https://github.com/wrappedether/wrappedether.github.io
+- GitHub Organization: https://github.com/wrappedether
+- Website Repo: https://github.com/wrappedether/wrappedether-site
 - Contract Repo: https://github.com/wrappedether/canonical-wetc
 
 ---
