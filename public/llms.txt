@@ -1,0 +1,45 @@
+# WETC — Wrapped Ether on Ethereum Classic
+
+> WETC is the canonical ERC-20 tokenized version of ETC, enabling DeFi composability on Ethereum Classic. Wrap native ETC into WETC to trade, provide liquidity, and interact with smart contracts.
+
+## About
+
+WETC (Wrapped ETC) is the standard ERC-20 wrapper for native ETC on Ethereum Classic. It follows the same WETH9 pattern used on Ethereum mainnet — a minimal, battle-tested contract that converts native ETC into an ERC-20 token at a 1:1 ratio. This enables ETC to be used in DeFi protocols, decentralized exchanges, and any smart contract expecting ERC-20 tokens.
+
+## How It Works
+
+1. **Wrap** — Send native ETC to the WETC contract. Receive WETC tokens 1:1.
+2. **Use** — Trade WETC on DEXs, provide liquidity, use in DeFi protocols.
+3. **Unwrap** — Burn WETC tokens. Receive native ETC back 1:1.
+
+## Contract
+
+- Address: `0x1953cab0E5bFa6D4a9BaD6E05fD46C1CC6527a5a`
+- Standard: ERC-20 (WETH9 pattern)
+- Networks: ETC Mainnet (Chain 61) + Mordor Testnet (Chain 63)
+- Source: github.com/wrappedether/canonical-wetc
+
+## Key Features
+
+- 1:1 ETC backing — no minting, no governance, no admin keys
+- Immutable contract — no proxy, no upgrades
+- Battle-tested WETH9 design — same pattern securing billions on Ethereum
+- Listed on CoinGecko and CoinMarketCap
+
+## Ecosystem
+
+- ETCswap — Wrap/unwrap and trade WETC (etcswap.org)
+- Classic USD — USD stablecoin using WETC as collateral (classicusd.com)
+- Classic OS — Economic command center for ETC (classicos.org)
+- Trezor — Hardware wallet for secure ETC/WETC storage
+
+## Web Properties
+
+- wrappedether.org — This site (WETC information and wrapping guide)
+- etcswap.org — DEX for trading WETC
+- classicusd.com — Stablecoin backed by WETC
+- github.com/wrappedether — Source code
+
+## Authors
+
+- Ethereum Classic Community
