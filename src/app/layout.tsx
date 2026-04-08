@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
-import { SITE, SEO_KEYWORDS, WETC_CONTRACT } from '@/lib/constants';
+import { SITE, SEO_KEYWORDS, WETC_CONTRACT, LINKS } from '@/lib/constants';
 import { BackgroundSystem } from '@/components/BackgroundSystem';
 
 const inter = Inter({
@@ -116,6 +116,45 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE.url}/#website`,
+      url: SITE.url,
+      name: SITE.name,
+      description: SITE.description,
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE.url}/#organization`,
+      name: 'WETC — Wrapped Ether on Ethereum Classic',
+      url: SITE.url,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE.url}/images/logos/wetc.svg`,
+      },
+      sameAs: [LINKS.github, LINKS.coingecko],
+    },
+    {
+      '@type': 'SoftwareApplication',
+      '@id': `${SITE.url}/#contract`,
+      name: 'WETC (Wrapped ETC)',
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'Ethereum Classic',
+      url: SITE.url,
+      description: 'ERC-20 smart contract wrapping native ETC for use in DeFi protocols on Ethereum Classic.',
+      identifier: WETC_CONTRACT,
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'ETC',
+      },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -123,6 +162,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
         <BackgroundSystem />
         <div className="relative z-10">{children}</div>
