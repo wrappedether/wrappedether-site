@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { SITE, SEO_KEYWORDS, WETC_CONTRACT } from '@/lib/constants';
 import { BackgroundSystem } from '@/components/BackgroundSystem';
@@ -125,6 +126,11 @@ export default function RootLayout({
       <body className="min-h-screen bg-background text-foreground antialiased">
         <BackgroundSystem />
         <div className="relative z-10">{children}</div>
+        <Script
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "591e1d7ccc39474a832058f92696dcb1"}'
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
