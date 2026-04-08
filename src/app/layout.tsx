@@ -128,7 +128,7 @@ export default function RootLayout({
         <div className="relative z-10">{children}</div>
         <Script
           src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "591e1d7ccc39474a832058f92696dcb1"}'
+          data-cf-beacon='{"token": "764be440ec9d467fa805b86b139bac37"}'
           strategy="afterInteractive"
         />
       </body>
